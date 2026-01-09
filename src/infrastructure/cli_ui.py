@@ -110,11 +110,7 @@ class InteractiveCLI(UI):
             letter if letter in state.guessed_letters else "*"
             for letter in state.word.value
         )
-        (
-            ", ".join(sorted(state.guessed_letters))
-            if state.guessed_letters
-            else "(нет)"
-        )
+        (", ".join(sorted(state.guessed_letters)) if state.guessed_letters else "(нет)")
         wrong = ", ".join(sorted(wrong_letters)) if wrong_letters else "(нет)"
         stage = (
             len(self.__hangman_stages) - 1
